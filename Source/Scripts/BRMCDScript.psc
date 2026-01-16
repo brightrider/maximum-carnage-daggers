@@ -19,6 +19,15 @@ Weapon Property BRMCDDaggerHandCutR Auto
 Weapon Property BRMCDDaggerRunThrew Auto
 Weapon Property BRMCDDaggerSpillGuts Auto
 
+Weapon Property BRMCDSwordBackGore Auto
+Weapon Property BRMCDSwordBodyCutR Auto
+Weapon Property BRMCDSwordBodyCutL Auto
+Weapon Property BRMCDSwordDecap Auto
+Weapon Property BRMCDSwordHandCutL Auto
+Weapon Property BRMCDSwordHandCutR Auto
+Weapon Property BRMCDSwordRunThrew Auto
+Weapon Property BRMCDSwordSpillGuts Auto
+
 Actor TargetActor
 ObjectReference TargetRef
 
@@ -30,21 +39,21 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
     TargetActor = akTarget
     TargetRef = akTarget as ObjectReference
 
-    If akCaster.IsEquipped(BRMCDDaggerBackGore)
+    If akCaster.IsEquipped(BRMCDDaggerBackGore) || akCaster.IsEquipped(BRMCDSwordBackGore)
         BackGore()
-    ElseIf akCaster.IsEquipped(BRMCDDaggerBodyCutR)
+    ElseIf akCaster.IsEquipped(BRMCDDaggerBodyCutR) || akCaster.IsEquipped(BRMCDSwordBodyCutR)
         BodyCutR()
-    ElseIf akCaster.IsEquipped(BRMCDDaggerBodyCutL)
+    ElseIf akCaster.IsEquipped(BRMCDDaggerBodyCutL) || akCaster.IsEquipped(BRMCDSwordBodyCutL)
         BodyCutL()
-    ElseIf akCaster.IsEquipped(BRMCDDaggerDecap)
+    ElseIf akCaster.IsEquipped(BRMCDDaggerDecap) || akCaster.IsEquipped(BRMCDSwordDecap)
         Decap()
-    ElseIf akCaster.IsEquipped(BRMCDDaggerHandCutL)
+    ElseIf akCaster.IsEquipped(BRMCDDaggerHandCutL) || akCaster.IsEquipped(BRMCDSwordHandCutL)
         HandCutL()
-    ElseIf akCaster.IsEquipped(BRMCDDaggerHandCutR)
+    ElseIf akCaster.IsEquipped(BRMCDDaggerHandCutR) || akCaster.IsEquipped(BRMCDSwordHandCutR)
         HandCutR()
-    ElseIf akCaster.IsEquipped(BRMCDDaggerRunThrew)
+    ElseIf akCaster.IsEquipped(BRMCDDaggerRunThrew) || akCaster.IsEquipped(BRMCDSwordRunThrew)
         runthrew()
-    ElseIf akCaster.IsEquipped(BRMCDDaggerSpillGuts)
+    ElseIf akCaster.IsEquipped(BRMCDDaggerSpillGuts) || akCaster.IsEquipped(BRMCDSwordSpillGuts)
         spillguts()
     EndIf
 EndEvent
